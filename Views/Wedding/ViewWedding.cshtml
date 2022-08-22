@@ -1,0 +1,13 @@
+@model Wedding
+
+<h1>@Model.Couple()'s Wedding</h1>
+<hr />
+<p>Date: @Model.Date.ToString("MMMM dd, yyyy")</p>
+
+<p>Guest List:</p>
+<ul>
+    @foreach(Connection item in ViewBag.guestList)
+    {
+        <li>@item.User.FullName()</li>
+    }
+</ul>
